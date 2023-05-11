@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as *;
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.get-started-btn {
+  color: white;
+  background-color: $clr-primary-cyan;
+  border: transparent;
+  border-radius: 2em;
+  padding: .75em 3.5em;
+  font-size: inherit;
+  font-weight: $fw-bold;
+}

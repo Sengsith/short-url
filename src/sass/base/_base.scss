@@ -1,0 +1,42 @@
+@use '../abstracts/variables' as *;
+
+#root {
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  font-size: $fs-body;
+  font-family: $ff-primary;
+  font-weight: $fw-medium;
+}
+
+li {
+  list-style: none;
+  padding: .5em 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  color: $clr-neutral-gray;
+}
+
+h1 {
+  color: $clr-neutral-darkviolet;
+}
+
+button {
+  transition: ease-in-out 200ms;
+}
+button:hover, button:focus {
+  opacity: .75;
+  scale: 1.1;
+}

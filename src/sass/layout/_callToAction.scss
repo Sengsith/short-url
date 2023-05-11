@@ -1,0 +1,14 @@
+@use '../abstracts/variables' as *;
+
+.call-to-action {
+  background-color: $clr-primary-violet;
+  background-image: $mobile-cta-bg;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 5em 0;
+}
+
+.cta-heading {
+  color: white;
+}

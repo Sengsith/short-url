@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as *;
+
+.links__container hr {
+  width: 80%;
+}
+
+.header {
+  background-color: white;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  padding: 1em 0;
+  z-index: 5000;
+}
+
+.links__container {
+  background-color: $clr-primary-violet;
+  position: absolute;
+  border-radius: 1em;
+  color: white;
+  width: inherit;
+  top: 3.5em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 9999;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.links li {
+  transition: ease-in-out 200ms;
+}
+.links li:hover, .links li:focus {
+  opacity: .75;
+  scale: 1.1;
+}
+
+.signup {
+  background-color: $clr-primary-cyan;
+  border-radius: 1.5em;
+}

@@ -1,0 +1,39 @@
+@use '../abstracts/variables' as *;
+
+.link-card {
+  background-color: white;
+  border: 1px solid red;
+  padding: 1em;
+  border-radius: .75em;
+  text-align: start;
+  overflow-x: hidden;
+}
+
+.original-link {
+  color: $clr-neutral-darkviolet;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shortened-link {
+  color: $clr-primary-cyan;
+}
+
+.link-card hr {
+  width: 200%;
+  position: relative;
+  left: -1em;
+  margin: 1em 0;
+}
+
+.copy-btn {
+  font: inherit;
+  font-weight: $fw-bold;
+  color: white;
+  height: 3em;
+  width: 100%;
+  background-color: $clr-primary-cyan;
+  border: transparent;
+  border-radius: .75em;
+  margin-top: 1em;
+}

@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as *;
+
+.statistics {
+  background-color: $clr-neutral-lightgray;
+  padding-bottom: 5em;
+}
+
+.statistics-description {
+  margin-bottom: 5em;
+}
+
+.blue-bar {
+  width: .75em;
+  height: 6em;
+  background-color: $clr-primary-cyan;
+  margin: 0 auto;
+}

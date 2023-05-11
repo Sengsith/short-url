@@ -1,0 +1,34 @@
+@use '../abstracts/variables' as *;
+
+.footer {
+  background-color: $clr-neutral-darkviolet;
+  padding: 3em 0;
+}
+
+.nav-group-name {
+  color: white;
+  font-weight: $fw-bold;
+}
+
+.nav-link-name {
+  color: $clr-neutral-gray;
+  transition: ease-in-out 200ms;
+}
+.nav-link-name:hover, .nav-link-name:focus
+,.social-item:hover, .social-item:focus {
+  opacity: .75;
+  scale: 1.1;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75em;
+}
+
+.social-item {
+  width: auto;
+  margin: 0;
+  transition: ease-in-out 200ms;
+}

@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as *;
+
+.card {
+  background-color: white;
+  border-radius: .5em;
+}
+
+.card-content {
+  position: relative;
+  padding: 3.5em 0 2em 0; 
+}
+
+.card-img {
+  position: absolute;
+  top: -2.5em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: $clr-primary-violet;
+  padding: 1.5em;
+  border-radius: 100vmax;
+}
