@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .shorten {
   background-color: $clr-primary-violet;
@@ -8,8 +9,6 @@
   background-size: contain;
   background-position-x: 5em;
   background-position-y: -2em;
-  justify-content: center;
-  align-items: center;
   border-radius: .75em;
   padding: 1.5em;
   position: relative;
@@ -19,8 +18,7 @@
 }
 
 .shorten-form {
-  display: flex;
-  flex-direction: column;
+  @include flexbox-col();
   gap: 1em;
 }
 
@@ -42,8 +40,8 @@
 }
 
 .error-msg {
-  text-align: left;
   margin-top: -1em;
+  margin-right: auto;
   color: red;
   font-size: .75rem;
 }
@@ -57,4 +55,28 @@
   background-color: $clr-primary-cyan;
   border: transparent;
   border-radius: .75em;
+}
+
+@media (min-width: 900px) {
+  .shorten {
+    background-image: $desktop-shorten-bg;
+    background-size: cover;
+    background-position-x: 0;
+    background-position-y: 0;
+    padding: 2em;
+  }
+
+  .shorten-form {
+    @include flexbox-row();
+  }
+
+  .shorten-btn {
+    width: 25%;
+  }
+
+  .error-msg {
+    position: absolute;
+    left: 3em;
+    bottom: 1em;
+  }
 }

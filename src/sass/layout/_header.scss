@@ -1,9 +1,5 @@
 @use '../abstracts/variables' as *;
 
-.links__container hr {
-  width: 80%;
-}
-
 .header {
   background-color: white;
   position: sticky;
@@ -18,12 +14,15 @@
   position: absolute;
   border-radius: 1em;
   color: white;
-  width: inherit;
   top: 3.5em;
   left: 0;
   right: 0;
   margin: 0 auto;
   z-index: 9999;
+
+  hr {
+    width: 80%;
+  }
 }
 
 .header__left {
@@ -35,16 +34,49 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-}
-.links li {
-  transition: ease-in-out 200ms;
-}
-.links li:hover, .links li:focus {
-  opacity: .75;
-  scale: 1.1;
+  li {
+    transition: ease-in-out 200ms;
+  }
+  li:hover, li:focus {
+    opacity: .75;
+    scale: 1.1;
+  }
 }
 
 .signup {
   background-color: $clr-primary-cyan;
   border-radius: 1.5em;
+}
+
+@media (min-width: 900px) {
+  .company-logo {
+  }
+  .links__container {
+    background-color: white;
+    color: $clr-neutral-gray;
+    position: sticky;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5em;
+    margin-left: 2em;
+    li {
+      width: auto;
+    }
+    li:hover, li:focus {
+      color: $clr-primary-violet;
+    }
+  }
+
+  .signup {
+    padding: .5em 2em;
+    color: white;
+  }
 }

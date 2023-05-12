@@ -11,3 +11,14 @@
   width: 130%;
   transform: translate(2em);
 }
+
+@media (min-width: 900px) {
+  .hero {
+    flex-direction: row-reverse;
+    text-align: start;
+  }
+
+  .hero__img {
+    transform: translate(6em);
+  }
+}

@@ -47,18 +47,22 @@ const Statistics = () => {
       <div className="container">
         <h2>Advanced Statistics</h2>
         <p className="statistics-description">Track how your links are performing across the web with our advanced statistics dashboard.</p>
-        {CARDS.map((card, index) => {
-          return (
-            <React.Fragment key={index}>
-              <FeatureCard
-                key={card.feature}
-                icon={card.icon}
-                feature={card.feature}
-                description={card.description}/>
-              {index !== CARDS.length - 1 && <div className="blue-bar"></div>}
-            </React.Fragment>
-          )
-        })}
+        <ul className="feature-cards">
+          {CARDS.map((card, index) => {
+            return (
+              <React.Fragment key={card.feature}>
+              <li key={index} className="card">
+                <FeatureCard
+                  key={card.feature}
+                  icon={card.icon}
+                  feature={card.feature}
+                  description={card.description}/>
+              </li>
+                {index !== CARDS.length - 1 && <div className="blue-bar"></div>}
+              </React.Fragment>
+            )
+          })}
+        </ul>
       </div>
     </section>
   );

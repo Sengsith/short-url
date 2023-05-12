@@ -2,6 +2,7 @@
 
 .container {
   width: 90%;
+  max-width: 70rem;
   margin: 0 auto;
 }
 
@@ -19,4 +20,11 @@
   padding: .75em 3.5em;
   font-size: inherit;
   font-weight: $fw-bold;
+}
+
+@media (min-width: 900px) {
+  .get-started-btn {
+    font-size: .8em;
+    padding-block: 1em;
+  }
 }

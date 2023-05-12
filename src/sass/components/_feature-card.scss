@@ -20,3 +20,21 @@
   padding: 1.5em;
   border-radius: 100vmax;
 }
+
+@media (min-width: 900px) {
+  .card-content {
+    text-align: start;
+  }
+
+  .card-img {
+    margin: 0;
+  }
+
+  .card:nth-child(1) { 
+    margin-top: -10%;
+  }
+
+  .card:nth-child(5) {
+    margin-bottom: -10%;
+  }
+}

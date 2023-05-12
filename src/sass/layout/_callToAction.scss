@@ -12,3 +12,9 @@
 .cta-heading {
   color: white;
 }
+
+@media (min-width: 900px) {
+  .call-to-action {
+    background-image: $desktop-cta-bg;
+  }
+}

@@ -1,8 +1,8 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .link-card {
   background-color: white;
-  border: 1px solid red;
   padding: 1em;
   border-radius: .75em;
   text-align: start;
@@ -36,4 +36,25 @@
   border: transparent;
   border-radius: .75em;
   margin-top: 1em;
+
+  &:hover, &:focus {
+    color: white;
+  }
+}
+
+@media (min-width: 900px) {
+  .link-card {
+    @include flexbox-row;
+    justify-content: space-between;
+    gap: 1.5em;
+  }
+
+  .shortened-link {
+    margin-left: auto;
+  }
+
+  .copy-btn {
+    width: 15%;
+    margin: auto 0;
+  }
 }

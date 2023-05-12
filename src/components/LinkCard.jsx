@@ -17,6 +17,8 @@ const LinkCard = ({ link, shortLink }) => {
       <div className="original-link">{link}</div>
       <hr></hr>
       <div className="shortened-link">{shortLink}</div>
+      <hr></hr>
+      <div className="shortened-link">https://rel.ink/k4lKyk</div>
       <button className="copy-btn" onClick={copyButtonClicked}>Copy</button>
     </div>
   )

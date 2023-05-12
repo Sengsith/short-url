@@ -53,11 +53,11 @@ const SOCIALS = [
 const Footer = () => {
   return(
     <footer className="footer">
-      <div className="container">
+      <div className="footer-container container">
       <img src={logo} alt="shortly" />
         <nav>
-          <ul>
-            <li>
+          <ul className="footer-ul">
+            <li className="navgroups">
               {NAVGROUP.map((group) => {
                 return (
                   <NavGroup
@@ -66,7 +66,7 @@ const Footer = () => {
                     urls={group.urls}/>
               )})}
             </li>
-            <li>
+            <li className="socials-container">
               <ul className="socials">
                 {SOCIALS.map((social) => {
                   return (

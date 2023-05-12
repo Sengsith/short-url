@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .statistics {
   background-color: $clr-neutral-lightgray;
@@ -14,4 +15,19 @@
   height: 6em;
   background-color: $clr-primary-cyan;
   margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .feature-cards {
+    @include flexbox-row;
+  }
+
+  .blue-bar {
+    width: 5em;
+    height: .75em;
+  }
+
+  .statistics-description {
+    margin-bottom: 10em;
+  }
 }
