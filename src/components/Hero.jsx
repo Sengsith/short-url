@@ -1,4 +1,4 @@
-import illustration from '../images/illustration-working.svg';
+import illustration from '/public/images/illustration-working.svg';
 
 const Hero = () => {
   return(

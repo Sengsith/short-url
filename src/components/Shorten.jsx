@@ -1,16 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const Shorten = ({ shortenedLinks, setShortenedLinks }) => {
-  const [isInputInvalid, setIsInputInvald] = useState(false);
+  const [isInputInvalid, setIsInputInvalid] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
 
   // Run everytime input loses focus
   const handleBlur = () => {
     if (!inputValue) {
-      setIsInputInvald(true);
+      setIsInputInvalid(true);
+    } else if (!inputValue.endsWith('.com')) {
+      setIsInputInvalid(true);
     } else {
-      setIsInputInvald(false);
+      setIsInputInvalid(false);
     }
   }
 
@@ -46,14 +48,21 @@ const Shorten = ({ shortenedLinks, setShortenedLinks }) => {
 
   // API call to shrt code using async await
   const shortenURL = async (url) => {
+    // Check if the url is empty
+    if (!url || !url.trim()) return;
+    // Check if url doesn't end with .com
+    if (!url.endsWith('.com')) return;
+
     const apiURL = `https://api.shrtco.de/v2/shorten?url=${url}`;
     try {
       const response = await fetch(apiURL);
       const data = await response.json();
       const shortUrlResult = data.result_short_link;
 
+      // Check if shortUrlResult is undefined
+      if (shortUrlResult === "undefined") return;
       // Create new object and append to passed in prop to send back to parent so we can render out the link cards
-      const newItem = {link: inputValue, shortLink: shortUrlResult}
+      const newItem = {link: inputValue, shortLink: shortUrlResult};
       setShortenedLinks([...shortenedLinks, newItem]);  
 
       return shortUrlResult;

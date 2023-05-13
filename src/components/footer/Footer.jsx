@@ -1,4 +1,4 @@
-import logo from '../../images/logo_white.svg';
+import logo from '/public/images/logo_white.svg';
 
 import NavGroup from './NavGroup';
 import Social from './Social';
@@ -34,19 +34,19 @@ const NAVGROUP = [
 const SOCIALS = [
   {
     name: "facebook",
-    url: {link: "#", icon: 'src/images/icon-facebook.svg'}
+    url: {link: "#", icon: '/public/images/icon-facebook.svg'}
   },
   {
     name: "twitter",
-    url: {link: "#", icon: 'src/images/icon-twitter.svg'}
+    url: {link: "#", icon: '/public/images/icon-twitter.svg'}
   },
   {
     name: "pinterest",
-    url: {link: "#", icon: 'src/images/icon-pinterest.svg'}
+    url: {link: "#", icon: '/public/images/icon-pinterest.svg'}
   },
   {
     name: "instagram",
-    url: {link: "#", icon: 'src/images/icon-instagram.svg'}
+    url: {link: "#", icon: '/public/images/icon-instagram.svg'}
   },
 ]
 

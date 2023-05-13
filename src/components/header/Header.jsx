@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-import logo from '../../images/logo.svg'
+import logo from '/public/images/logo.svg'
 import HeaderLeftLinks from './HeaderLeftLinks';
 import HeaderRightLinks from './HeaderRightLinks';
 
