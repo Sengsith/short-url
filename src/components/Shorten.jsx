@@ -57,7 +57,7 @@ const Shorten = ({ shortenedLinks, setShortenedLinks }) => {
     try {
       const response = await fetch(apiURL);
       const data = await response.json();
-      const shortUrlResult = data.result_short_link;
+      const shortUrlResult = data.result.full_short_link;
 
       // Check if shortUrlResult is undefined
       if (shortUrlResult === "undefined") return;

@@ -5,10 +5,9 @@ import Shorten from '../Shorten';
 import LinkCard from '../LinkCard';
 
 
-import recognition from '/public/images/icon-brand-recognition.svg';
-import records from '/public/images/icon-detailed-records.svg';
-
-import customizable from '/public/images/icon-fully-customizable.svg';
+import recognition from '/src/images/icon-brand-recognition.svg';
+import records from '/src/images/icon-detailed-records.svg';
+import customizable from '/src/images/icon-fully-customizable.svg';
 
 const CARDS = [{
   feature: "Brand Recognition",

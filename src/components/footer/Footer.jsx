@@ -1,4 +1,8 @@
-import logo from '/public/images/logo_white.svg';
+import logo from '/src/images/logo_white.svg';
+import facebook from '/src/images/icon-facebook.svg';
+import twitter from '/src/images/icon-twitter.svg';
+import pinterest from '/src/images/icon-pinterest.svg';
+import instagram from '/src/images/icon-instagram.svg';
 
 import NavGroup from './NavGroup';
 import Social from './Social';
@@ -34,19 +38,19 @@ const NAVGROUP = [
 const SOCIALS = [
   {
     name: "facebook",
-    url: {link: "#", icon: '/public/images/icon-facebook.svg'}
+    url: {link: "#", icon: facebook}
   },
   {
     name: "twitter",
-    url: {link: "#", icon: '/public/images/icon-twitter.svg'}
+    url: {link: "#", icon: twitter}
   },
   {
     name: "pinterest",
-    url: {link: "#", icon: '/public/images/icon-pinterest.svg'}
+    url: {link: "#", icon: pinterest}
   },
   {
     name: "instagram",
-    url: {link: "#", icon: '/public/images/icon-instagram.svg'}
+    url: {link: "#", icon: instagram}
   },
 ]
 
