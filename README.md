@@ -88,4 +88,4 @@ My CSS got pretty messy when playing around with the footer when setting up my m
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/sengsith)
+- Frontend Mentor - [@sengsith](https://www.frontendmentor.io/profile/sengsith)
