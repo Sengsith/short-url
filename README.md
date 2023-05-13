@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Sengsith/short-url)
-- Live Site URL: [Add live site URL here](https://ahreo-shorturl.netlify.app/)
+- Solution URL: [GitHub](https://github.com/Sengsith/short-url)
+- Live Site URL: [Netlify](https://ahreo-shorturl.netlify.app/)
 
 ## My process
 
