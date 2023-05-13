@@ -1,24 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const Shorten = ({ shortenedLinks, setShortenedLinks }) => {
-  const [shortLink, setShortLink] = useState("");
   const [isInputInvalid, setIsInputInvald] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
+
+  // Run everytime input loses focus
+  const handleBlur = () => {
+    if (!inputValue) {
+      setIsInputInvald(true);
+    } else {
+      setIsInputInvald(false);
+    }
+  }
 
   // Validate whether user has inputted a link into the input
   useEffect(() => {
     // Reference to our input element
     const inputElement = inputRef.current;
-
-    // Run everytime input loses focus
-    const handleBlur = () => {
-      if (!inputValue) {
-        setIsInputInvald(true);
-      } else {
-        setIsInputInvald(false);
-      }
-    }
 
     inputElement.addEventListener("blur", handleBlur);
 
@@ -30,27 +29,34 @@ const Shorten = ({ shortenedLinks, setShortenedLinks }) => {
 
   const submitForm = (e) => {
     e.preventDefault();
-
+    if (!inputRef.current.value.trim()) {
+      handleBlur();
+      return;
+    };
     // Keep reference to link provided by user
     const inputValue = inputRef.current.value;
 
-    // Store returned short link data from API and set to state
-    const tempShortLink = shortenURL(inputValue);
-    setShortLink(tempShortLink);
+    // Use API to shorten a given link
+    shortenURL(inputValue);
 
-    // Create new object and append to passed in prop to send back to parent so we can render out the link cards
-    const newItem = {link: inputValue, shortLink: shortLink}
-    setShortenedLinks([...shortenedLinks, newItem]);
+    // Empty out inputRef and inputValue
+    inputRef.current.value = "";
+    setInputValue(inputRef.current.value);
   }
 
   // API call to shrt code using async await
   const shortenURL = async (url) => {
     const apiURL = `https://api.shrtco.de/v2/shorten?url=${url}`;
-    
     try {
       const response = await fetch(apiURL);
       const data = await response.json();
-      return data.result.short_link;
+      const shortUrlResult = data.result_short_link;
+
+      // Create new object and append to passed in prop to send back to parent so we can render out the link cards
+      const newItem = {link: inputValue, shortLink: shortUrlResult}
+      setShortenedLinks([...shortenedLinks, newItem]);  
+
+      return shortUrlResult;
     } catch (error) {
       console.error(error);
       return null;
@@ -59,17 +65,16 @@ const Shorten = ({ shortenedLinks, setShortenedLinks }) => {
 
   return(
     <div className="shorten container">
-        <form className="shorten-form" onSubmit={submitForm}>
-          <input 
-            ref={inputRef} 
-            className={"shorten-input " + (isInputInvalid ? "error" : "")} 
-            type="text" 
-            placeholder="Shorten a link here..." 
-            onChange={(e) => {setInputValue(e.target.value)}}/>
-          {isInputInvalid && <div class="error-msg">Please add a link</div>}
-          <button className="shorten-btn">Shorten it!</button>
-        </form>
-        {shortLink && <p>{shortLink}</p>}
+      <form className="shorten-form" onSubmit={submitForm}>
+        <input 
+          ref={inputRef} 
+          className={"shorten-input " + (isInputInvalid ? "error" : "")} 
+          type="text" 
+          placeholder="Shorten a link here..." 
+          onChange={(e) => {setInputValue(e.target.value)}}/>
+        {isInputInvalid && <div className="error-msg">Please add a link</div>}
+        <button className="shorten-btn">Shorten it!</button>
+      </form>
     </div>
   );
 }

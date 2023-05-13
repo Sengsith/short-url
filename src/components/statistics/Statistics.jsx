@@ -35,15 +35,14 @@ const Statistics = () => {
   return(
     <section className="statistics">
       <Shorten shortenedLinks={shortenedLinks} setShortenedLinks={setShortenedLinks}/>
-      {shortenedLinks.map((item) => {
+      {shortenedLinks.map((item, index) => {
         return (
           <LinkCard 
-            key={item.shortLink}
+            key={index}
             link={item.link} 
             shortLink={item.shortLink}/>
         )
       })}
-      {shortenedLinks.length !== 0 }
       <div className="container">
         <h2>Advanced Statistics</h2>
         <p className="statistics-description">Track how your links are performing across the web with our advanced statistics dashboard.</p>
